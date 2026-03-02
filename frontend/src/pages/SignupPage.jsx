@@ -49,12 +49,12 @@ export default function SignupPage() {
         try {
             const res = await authAPI.register(form)
             dispatch(setCredentials({ token: res.data.access_token, user: res.data.user }))
-            navigate('/events')
+            navigate('/verify-email')
         } catch {
-            // Demo fallback
+            // Demo fallback — simulate email verification flow
             const user = { id: Date.now(), name: form.name, email: form.email, role: 'Member', domain: form.domain, skills: form.skills, experience: form.experience }
             dispatch(setCredentials({ token: 'demo_signup_token_' + user.id, user }))
-            navigate('/events')
+            navigate('/verify-email')
         } finally {
             setLoading(false)
         }

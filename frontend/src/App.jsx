@@ -5,6 +5,8 @@ import ARIAChatbot from './components/ARIAChatbot'
 import LandingPage from './pages/LandingPage'
 import LoginPage from './pages/LoginPage'
 import SignupPage from './pages/SignupPage'
+import VerifyEmailPage from './pages/VerifyEmailPage'
+import ForgotPasswordPage from './pages/ForgotPasswordPage'
 import EventsPage from './pages/EventsPage'
 import TeamsPage from './pages/TeamsPage'
 import LeaderboardPage from './pages/LeaderboardPage'
@@ -21,13 +23,15 @@ function App() {
   const { isAuthenticated } = useSelector((s) => s.auth)
 
   return (
-    <div className="min-h-screen" style={{ background: '#020d04' }}>
+    <div className="min-h-screen" style={{ background: '#060a10' }}>
       <Navbar />
       <ARIAChatbot />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={isAuthenticated ? <Navigate to="/events" /> : <LoginPage />} />
         <Route path="/signup" element={isAuthenticated ? <Navigate to="/events" /> : <SignupPage />} />
+        <Route path="/verify-email" element={<VerifyEmailPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/events" element={<ProtectedRoute><EventsPage /></ProtectedRoute>} />
         <Route path="/teams" element={<ProtectedRoute><TeamsPage /></ProtectedRoute>} />
         <Route path="/leaderboard" element={<ProtectedRoute><LeaderboardPage /></ProtectedRoute>} />

@@ -69,8 +69,10 @@ export default function LoginPage() {
                 </div>
 
                 {/* Demo hint */}
-                <div style={{ background: 'rgba(0,255,65,0.05)', border: '1px solid rgba(0,255,65,0.15)', borderRadius: '8px', padding: '0.75rem 1rem', marginBottom: '1.5rem', fontSize: '0.78rem', color: '#4a7a50', fontFamily: 'JetBrains Mono' }}>
-                    Demo: arya@hq.dev / hq123456
+                <div style={{ background: 'rgba(0,212,255,0.05)', border: '1px solid rgba(0,212,255,0.15)', borderRadius: '8px', padding: '0.75rem 1rem', marginBottom: '1.5rem', fontSize: '0.78rem', fontFamily: 'JetBrains Mono' }}>
+                    <div style={{ color: '#00d4ff', fontWeight: 700, marginBottom: '0.2rem' }}>🎯 Demo Credentials</div>
+                    <div style={{ color: '#64748b' }}>arya@hq.dev <span style={{ color: '#94a3b8' }}>/</span> hq123456 <span style={{ fontSize: '0.65rem', color: '#f59e0b' }}>(Admin)</span></div>
+                    <div style={{ color: '#64748b' }}>ravi@hq.dev <span style={{ color: '#94a3b8' }}>/</span> hq123456 <span style={{ fontSize: '0.65rem', color: '#94a3b8' }}>(Member)</span></div>
                 </div>
 
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
@@ -119,10 +121,13 @@ export default function LoginPage() {
                     </motion.button>
                 </form>
 
-                <p style={{ textAlign: 'center', marginTop: '1.5rem', fontSize: '0.82rem', color: '#4a7a50' }}>
-                    New operator?{' '}
-                    <Link to="/signup" style={{ color: '#00ff41', textDecoration: 'none', fontWeight: 600 }}>Create account →</Link>
-                </p>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                    <p style={{ fontSize: '0.82rem', color: '#64748b' }}>
+                        New operator?{' '}
+                        <Link to="/signup" style={{ color: '#00ff41', textDecoration: 'none', fontWeight: 600 }}>Create account →</Link>
+                    </p>
+                    <Link to="/forgot-password" style={{ fontSize: '0.78rem', color: '#64748b', textDecoration: 'none', fontFamily: 'JetBrains Mono' }}>Forgot password?</Link>
+                </div>
             </motion.div>
         </div>
     )
